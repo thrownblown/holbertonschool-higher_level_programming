@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import ez_prnt 
+import ez_prnt
