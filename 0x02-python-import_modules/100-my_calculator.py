@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-import calculator_1
+from calculator_1 import add, sub, mul, div
 from sys import argv
 if __name__ == '__main__':
     calculator = {
-        "+": calculator_1.add,
-        "-": calculator_1.sub,
-        "*": calculator_1.mul,
-        "/": calculator_1.div
+        "+": add,
+        "-": sub,
+        "*": mul,
+        "/": div
     }
     if (len(argv) != 4):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
