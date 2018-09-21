@@ -4,3 +4,5 @@ def best_score(a_dictionary):
         return(max(a_dictionary.values()))
     except (ValueError, AttributeError):
         return(None)
+    except BaseException:
+        return(None)
