@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if type(a_dictionary) is dict:
-        return(max(a_dictionary.values()))
-    return(None)
+    try:
+        return(max(a_dictionary))
+    except (ValueError, TypeError):
+        return(None)
