@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    try:
+    if type(a_dictionary) is dict:
         return(max(a_dictionary.values()))
-    except (ValueError, AttributeError):
-        return(None)
-    except BaseException:
-        return(None)
+    return(None)
