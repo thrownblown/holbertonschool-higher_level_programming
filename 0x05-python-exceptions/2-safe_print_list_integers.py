@@ -4,7 +4,7 @@ def safe_print_list_integers(my_list=[], x=0):
         for value in my_list:
             try:
                 if idx < x:
-                    print("{:d}".format(value))
+                    print("{:d}".format(value), end="")
                     idx += 1
                 else:
                     break
