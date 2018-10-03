@@ -18,11 +18,11 @@ class Square:
             raise TypeError('size must be an integer')
         self.__size = value
 
-        def my_print(self):
-            if self.size > 0:
-                for row in range(self.size):
-                    for col in range(self.size):
-                        print('#', end='')
-                    print()
-            else:
+    def my_print(self):
+        if self.size > 0:
+            for row in range(self.size):
+                for col in range(self.size):
+                    print('#', end='')
                 print()
+        else:
+            print()
