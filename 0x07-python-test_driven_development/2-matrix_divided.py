@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-def check_int(err, *argv):
+def check_types(err, type_list, *argv):
     for i in argv:
         if i is None:
             raise TypeError(err)
         t = type(i)
-        if t is not int and t is not float:
+        if t not in type_list:
             raise TypeError(err)
     return (True)
 
@@ -22,7 +22,7 @@ def matrix_divided(matrix, div):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats"
         )
-    check_int("div must be a number", div)
+    check_types("div must be a number", [int, float], div)
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
@@ -34,7 +34,7 @@ def matrix_divided(matrix, div):
         row = []
         for col in matrix[i]:
             err = "matrix must be a matrix (list of lists) of integers/floats"
-            check_int(err, col)
+            check_types(err, [int, float], col)
             row.append(round(col / div, 2))
         box.append(row)
     return box
