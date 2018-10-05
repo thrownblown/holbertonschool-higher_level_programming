@@ -25,20 +25,20 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if (len(value) is not 2 or type(value[0]) is not int or type(value[1])
-                is not int or value[0] < 0 or value[1] < 0):
+        if (len(value) != 2 or type(value[0]) != int or type(value[1]) != int):
+            raise TypeError('position must be a tuple of 2 positive integers')
+        if (value[0] < 0 or value[1] < 0):
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
     def my_print(self):
-        pos = self.position
         if self.size > 0:
-            for row in range(self.size + pos[1]):
-                if row < pos[1]:
+            for row in range(self.position[1] + self.size):
+                if row < self.position[1]:
                     print()
                 else:
-                    for col in range(self.size + pos[0]):
-                        if col < pos[0]:
+                    for col in range(self.position[0] + self.size):
+                        if col < self.position[0]:
                             print(end=' ')
                         else:
                             print('#', end='')
