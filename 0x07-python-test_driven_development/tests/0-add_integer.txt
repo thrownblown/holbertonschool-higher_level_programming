@@ -14,7 +14,7 @@ This is a doctest that checks the add_integer function
 98
 
 >>> try:
-...     add_integer(3, "School")
+...     add_integer(3, "string")
 ... except Exception as e:
 ...     print(e)
 b must be an integer
@@ -44,37 +44,43 @@ a must be an integer
 a must be an integer
 
 >>> try:
-...     print(add_integer("School", 4))
+...     print(add_integer(None, 5))
 ... except Exception as e:
 ...     print(e)
 a must be an integer
 
 >>> try:
-...     print(add_integer(None, 4))
+...     print(add_integer("string", 4))
 ... except Exception as e:
 ...     print(e)
 a must be an integer
 
 >>> try:
-...     print(add_integer("School", "holberton"))
+...     print(add_integer("1", "2"))
 ... except Exception as e:
 ...     print(e)
 a must be an integer
 
 >>> try:
-...     print(add_integer([1, 2, 3, 4, 5], "holberton"))
+...     print(add_integer("one", "two"))
 ... except Exception as e:
 ...     print(e)
 a must be an integer
 
 >>> try:
-...     print(add_integer((1, 2), "holberton"))
+...     print(add_integer([1, 2, 3, 4, 5], "list of ints"))
 ... except Exception as e:
 ...     print(e)
 a must be an integer
 
 >>> try:
-...     print(add_integer({1 : 2}, "holberton"))
+...     print(add_integer((1, 2), 1))
+... except Exception as e:
+...     print(e)
+a must be an integer
+
+>>> try:
+...     print(add_integer({1 : 2}, "string"))
 ... except Exception as e:
 ...     print(e)
 a must be an integer
