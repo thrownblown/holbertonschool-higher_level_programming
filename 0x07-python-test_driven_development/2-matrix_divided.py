@@ -12,7 +12,7 @@ def check_int(err, *argv):
 def matrix_divided(matrix, div):
     if not matrix:
         raise TypeError(
-            "matrix must be a matrix (list of lists) of integers floats"
+            "matrix must be a matrix (list of lists) of integers/floats"
         )
     if type(matrix) is not list:
         raise TypeError(

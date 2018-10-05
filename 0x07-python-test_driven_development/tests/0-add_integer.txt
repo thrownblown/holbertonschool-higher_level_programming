@@ -1,4 +1,3 @@
-This is a doctest that checks the add_integer function
 >>> add_integer = __import__('0-add_integer').add_integer
 
 >>> add_integer(1, 2)
