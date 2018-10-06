@@ -10,7 +10,11 @@ def check_types(err, type_list, *argv):
     return (True)
 
 
-def say_my_name(first_name, last_name=""):
-    check_types("first_name must be a string", [str], first_name)
-    check_types("last_name must be a string", [str], last_name)
-    print("My name is {:s} {:s}".format(first_name, last_name))
+def print_square(size):
+    check_types("size must be an integer", [int], size)
+    if size < 0:
+        raise ValueError("size must be >= 0")
+    for row in range(size):
+        for col in range(size):
+            print('#', end='')
+        print('')
