@@ -6,8 +6,8 @@ class Rectangle:
     """Rectangle class with height and width attributes"""
     def __init__(self, width=0, height=0):
         """Initer"""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -65,4 +65,4 @@ class Rectangle:
 
     def __del__(self):
         """Prints epitaph for del rect"""
-        print("Bye rectangle... ")
+        print("Bye rectangle...")

@@ -6,8 +6,8 @@ class Rectangle:
     """Rectangle class with height and width attributes"""
     def __init__(self, width=0, height=0):
         """Initer"""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     number_of_instances = 0
@@ -70,7 +70,7 @@ class Rectangle:
     def __del__(self):
         """Prints epitaph for del rect"""
         Rectangle.number_of_instances -= 1
-        print("Bye rectangle... ")
+        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
