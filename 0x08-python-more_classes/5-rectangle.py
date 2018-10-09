@@ -46,3 +46,23 @@ class Rectangle:
         if self.height is 0 or self.width is 0:
             return(0)
         return(2 * (self.width + self.height))
+
+    def __str__(self):
+        """Returns str of # with instance dimensions"""
+        rect = ''
+        if self.height is 0 or self.width is 0:
+            return(rect)
+        for row in range(self.height):
+            for col in range(self.width):
+                rect += '#'
+            if row != self.height - 1:
+                rect += '\n'
+        return(rect)
+
+    def __repr__(self):
+        """Returns a string representation of the rectangle"""
+        return("Rectangle({}, {})".format(self.width, self.height))
+
+    def __del__(self):
+        """Prints epitaph for del rect"""
+        print("Bye rectangle... ")
