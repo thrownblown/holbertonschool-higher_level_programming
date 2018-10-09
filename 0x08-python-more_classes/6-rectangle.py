@@ -8,6 +8,9 @@ class Rectangle:
         """Initer"""
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
+
+    number_of_instances = 0
 
     @property
     def width(self):
@@ -65,4 +68,5 @@ class Rectangle:
 
     def __del__(self):
         """Prints epitaph for del rect"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle... ")
