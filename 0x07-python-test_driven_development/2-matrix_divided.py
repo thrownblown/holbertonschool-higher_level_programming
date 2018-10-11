@@ -18,10 +18,11 @@ def matrix_divided(matrix, div):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats"
         )
-    if type(matrix[0]) is not list or type(matrix[1]) is not list:
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats"
-        )
+    for row in matrix:
+        if type(row) is not list:
+            raise TypeError(
+                "matrix must be a matrix (list of lists) of integers/floats"
+            )
     check_types("div must be a number", [int, float], div)
     if div == 0:
         raise ZeroDivisionError("division by zero")
