@@ -83,3 +83,9 @@ a must be an integer
 ... except Exception as e:
 ...     print(e)
 a must be an integer
+
+>>> try:
+...     print(add_integer(float('nan'), 1))
+... except Exception as e:
+...     print(e)
+a must be an integer
