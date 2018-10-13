@@ -13,8 +13,9 @@ def check_types(err, type_list, *argv):
 def text_indentation(txt):
     ''' formats text '''
     check_types("text must be a string", [str], txt)
-    txt = txt.replace("? ", "?").replace("?\n", "?")
-    txt = txt.replace(". ", ".").replace(".\n", ".")
-    txt = txt.replace(": ", ":").replace(":\n", ":")
-    txt = txt.replace(":", ":\n\n").replace("?", "?\n\n").replace(".", ".\n\n")
-    print(txt.strip())
+    for line in txt.splitlines():
+        line = line.replace("? ", "?").replace("?\n", "?")
+        line = line.replace(". ", ".").replace(".\n", ".")
+        line = line.replace(": ", ":").replace(":\n", ":")
+        line = line.replace(":", ":\n\n").replace("?", "?\n\n").replace(".", ".\n\n")
+        print(line.strip())
