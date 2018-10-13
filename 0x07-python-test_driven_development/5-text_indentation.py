@@ -11,13 +11,10 @@ def check_types(err, type_list, *argv):
 
 
 def text_indentation(txt):
+    ''' formats text '''
     check_types("text must be a string", [str], txt)
     txt = txt.replace("? ", "?").replace("?\n", "?")
     txt = txt.replace(". ", ".").replace(".\n", ".")
     txt = txt.replace(": ", ":").replace(":\n", ":")
     txt = txt.replace(":", ":\n\n").replace("?", "?\n\n").replace(".", ".\n\n")
-    print(txt)
-
-    # for i in range(len(text)):
-    #     if text[i] == "." or text[i] == "?" or text[i] == ":":
-    #         text = "{}{}".format(text[:i + 1], text[i + 1:].strip())
+    print(txt.strip())
