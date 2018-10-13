@@ -50,4 +50,3 @@ text must be a string
 <BLANKLINE>
 :
 <BLANKLINE>
-<BLANKLINE>
