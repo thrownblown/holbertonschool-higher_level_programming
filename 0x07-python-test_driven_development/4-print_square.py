@@ -11,6 +11,7 @@ def check_types(err, type_list, *argv):
 
 
 def print_square(size):
+    ''' prints a square '''
     check_types("size must be an integer", [int], size)
     if size < 0:
         raise ValueError("size must be >= 0")
