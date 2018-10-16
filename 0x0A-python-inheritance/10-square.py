@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' BaseGeometry, Rectangle, and Square Class module '''
+
+
 class BaseGeometry():
     ''' base class for geo objects '''
 

@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+"""Module with MyList class"""
+
+
 class MyList(list):
     """ like lists only better """
 
     def print_sorted(self):
-        retval = self[:]
-        retval.sort()
-        print(retval)
+        """ prints the sorted list """
+        print(sorted(self))
