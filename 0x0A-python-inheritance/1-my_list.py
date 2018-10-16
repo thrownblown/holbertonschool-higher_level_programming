@@ -3,4 +3,6 @@ class MyList(list):
     """ like lists only better """
 
     def print_sorted(self):
-        print(self.sort())
+        retval = self[:]
+        retval.sort()
+        print(retval)
