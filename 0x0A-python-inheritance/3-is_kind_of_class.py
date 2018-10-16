@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" inherits_from function module """
+""" is_kind_of_class function module """
 
 
-def inherits_from(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """ compares class """
     return(isinstance(obj, a_class))
