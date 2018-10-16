@@ -3,7 +3,7 @@ class BaseGeometry():
     ''' base class for geo objects '''
 
     def area(self):
-        ''' throws error for future '''
+        ''' throws error for future proof '''
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
