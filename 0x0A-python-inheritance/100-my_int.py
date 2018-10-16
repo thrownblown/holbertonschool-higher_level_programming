@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+''' MyInt Class module '''
+
+
 class MyInt(int):
     ''' rebel int inverted equals '''
     def __init__(self, value):
