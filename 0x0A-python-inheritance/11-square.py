@@ -38,5 +38,11 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     ''' shape class for 4 sided object with right angles and equal sides '''
     def __init__(self, size):
-        super(Square, self).__init__(size, size)
+        self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
+
+    @property
+    def size(self):
+        """Retrieves private attribute size"""
+        return self.__size
