@@ -11,6 +11,6 @@ def read_lines(filename="", nb_lines=0):
     with open(filename, encoding='utf-8') as f:
         for i, line in enumerate(f):
             if i < nb_lines:
-                print(line, end='')
+                print(line, end='', sep='')
             else:
                 break
