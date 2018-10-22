@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module with the Rectable class"""
+"""Module with the Rectangle class"""
 from .base import Base
 
 
@@ -94,8 +94,3 @@ class Rectangle(Base):
     def __repr__(self):
         """Returns a string representation of the rectangle"""
         return("Rectangle({}, {})".format(self.width, self.height))
-
-    # def __del__(self):
-    #     """Prints epitaph for del rect"""
-    #     Rectangle.__nb_objects -= 1
-    #     print("Bye rectangle...")
