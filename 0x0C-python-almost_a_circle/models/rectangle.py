@@ -7,7 +7,6 @@ class Rectangle(Base):
     """Rectangle class with height and width attributes"""
     print_symbol = '#'
 
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initer"""
         super(Rectangle, self).__init__(id=id)
@@ -101,6 +100,7 @@ class Rectangle(Base):
         return(rect)
 
     def __str__(self):
+        """Returns a string descriptor of the rectangle"""
         return ("[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__,
             self.id,
