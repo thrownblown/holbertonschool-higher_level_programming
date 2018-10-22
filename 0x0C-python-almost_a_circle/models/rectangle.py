@@ -142,6 +142,7 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
+        """ returns a dict with apropos key value pairs """
         return({
             "id": self.id,
             "width": self.width,
