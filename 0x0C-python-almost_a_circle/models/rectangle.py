@@ -5,6 +5,9 @@ from .base import Base
 
 class Rectangle(Base):
     """Rectangle class with height and width attributes"""
+    print_symbol = '#'
+
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initer"""
         super(Rectangle, self).__init__(id=id)
@@ -79,18 +82,61 @@ class Rectangle(Base):
             return(0)
         return(2 * (self.width + self.height))
 
-    def __str__(self):
+    def __display_string(self):
         """Returns str of # with instance dimensions"""
         rect = ''
         if self.height is 0 or self.width is 0:
             return(rect)
-        for row in range(self.height):
-            for col in range(self.width):
-                rect += '#'
-            if row != self.height - 1:
-                rect += '\n'
+        for row in range(self.height + self.y):
+            if row >= self.y:
+                for col in range(self.width + self.x):
+                    if col >= self.x:
+                        rect += self.print_symbol
+                    else:
+                        rect += " "
+                if row != (self.height + self.y - 1):
+                    rect += '\n'
+            else:
+                rect += "\n"
         return(rect)
+
+    def __str__(self):
+        return ("[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__,
+            self.id,
+            self.x,
+            self.y,
+            self.width,
+            self.height
+        ))
 
     def __repr__(self):
         """Returns a string representation of the rectangle"""
         return("Rectangle({}, {})".format(self.width, self.height))
+
+    def display(self):
+        """prints a rectangle to the screen"""
+        print(self.__display_string())
+
+    def update(self, *args, **kwargs):
+        """ updates the rectangle dimensions """
+        if len(args):
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
