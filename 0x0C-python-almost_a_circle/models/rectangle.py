@@ -7,7 +7,7 @@ class Rectangle(Base):
     """Rectangle class with height and width attributes"""
     print_symbol = '#'
 
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, width=1, height=1, x=0, y=0, id=None):
         """Initer"""
         super(Rectangle, self).__init__(id=id)
         self.width = width

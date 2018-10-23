@@ -46,7 +46,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ makes obj from dict """
-        inst = cls(1, 1)
+        inst = cls()
         if type(dictionary) == dict:
             inst.update(**dictionary)
         return(inst)
