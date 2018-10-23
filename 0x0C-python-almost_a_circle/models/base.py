@@ -33,6 +33,7 @@ class Base:
                 for obj in list_objs:
                     obj_list.append(obj.to_dictionary())
             json_file.write(Base.to_json_string(obj_list))
+            json_file.close()
 
     @staticmethod
     def from_json_string(json_string):
@@ -58,4 +59,5 @@ class Base:
             for i in range(len(dict_list)):
                 new = cls.create(**dict_list[i])
                 obj_list.append(new)
+            json_file.close()
             return(obj_list)
