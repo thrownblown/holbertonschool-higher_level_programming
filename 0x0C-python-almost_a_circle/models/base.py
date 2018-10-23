@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Module with the Base class"""
 import json
+import os
+import csv
 
 
 class Base:
@@ -18,7 +20,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns a json string of supplied dict """
-        if not list_dictionaries:
+        if not list_dictionaries or not len(list_dictionaries):
             return ("[]")
         return(json.dumps(list_dictionaries))
 
@@ -27,7 +29,6 @@ class Base:
         """ saves json to file"""
         filename = str(cls.__name__) + '.json'
         with open(filename, 'w+', encoding='utf-8') as json_file:
-            json_file.seek(0)
             obj_list = []
             if list_objs and len(list_objs):
                 for obj in list_objs:
@@ -53,8 +54,10 @@ class Base:
     def load_from_file(cls):
         """ loads objs json file"""
         filename = str(cls.__name__) + ".json"
+        obj_list = []
+        if os.path.exists(filename) is not True:
+            return(obj_list)
         with open(filename, 'r+', encoding='utf-8') as json_file:
-            obj_list = []
             dict_list = Base.from_json_string(json_file.read())
             for i in range(len(dict_list)):
                 new = cls.create(**dict_list[i])
