@@ -40,7 +40,7 @@ class Base:
     def from_json_string(json_string):
         """ returns object from json data string """
         if not json_string:
-            json_string = ""
+            json_string = "[]"
         return(json.loads(json_string))
 
     @classmethod
@@ -56,7 +56,7 @@ class Base:
         """ loads objs json file """
         filename = str(cls.__name__) + ".json"
         obj_list = []
-        if os.path.exists(filename) is not True:
+        if not os.path.exists(filename):
             return(obj_list)
         with open(filename, 'r+', encoding='utf-8') as json_file:
             dict_list = Base.from_json_string(json_file.read())
@@ -87,7 +87,8 @@ class Base:
         with open(filename, 'r+') as csv_file:
             for line in csv.reader(csv_file):
                 obj = cls.create()
-                obj.update(*list(map(int, line)))
+                obj = map(int, line)
+                obj.update(*list(obj))
                 obj_list.append(obj)
             csv_file.close()
         return(obj_list)
