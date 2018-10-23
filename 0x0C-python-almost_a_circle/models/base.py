@@ -33,3 +33,15 @@ class Base:
                 for obj in list_objs:
                     obj_list.append(obj.to_dictionary())
             json_file.write(Base.to_json_string(obj_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns object from json data string """
+        return(json.loads(json_string))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ makes obj from dict """
+        inst = cls(1, 1)
+        inst.update(**dictionary)
+        return(inst)
