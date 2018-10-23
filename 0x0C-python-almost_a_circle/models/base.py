@@ -29,7 +29,7 @@ class Base:
         with open(filename, 'w+', encoding='utf-8') as json_file:
             json_file.seek(0)
             obj_list = []
-            if len(list_objs):
+            if list_objs and len(list_objs):
                 for obj in list_objs:
                     obj_list.append(obj.to_dictionary())
             json_file.write(Base.to_json_string(obj_list))
