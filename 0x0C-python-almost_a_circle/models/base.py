@@ -52,7 +52,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ loads objs json file"""
+        """ loads objs json file """
         filename = str(cls.__name__) + ".json"
         obj_list = []
         if os.path.exists(filename) is not True:
@@ -64,3 +64,29 @@ class Base:
                 obj_list.append(new)
             json_file.close()
             return(obj_list)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ saves shape object list to csv """
+        filename = cls.__name__ + '.csv'
+        with open(filename, 'w+') as json_file:
+            csvwriter = csv.writer(json_file)
+            for i in list_objs:
+                if cls.__name__ == "Rectangle":
+                    csvwriter.writerow([i.id, i.width, i.height, i.x, i.y])
+                else:
+                    csvwriter.writerow([i.id, i.size, i.x, i.y])
+            json_file.close()
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ creates objects from a csv file """
+        filename = cls.__name__ + '.csv'
+        obj_list = []
+        with open(filename, 'r+') as csv_file:
+            for line in csv.reader(csv_file):
+                obj = cls.create()
+                obj.update(*list(map(int, line)))
+                obj_list.append(obj)
+            csv_file.close()
+        return(obj_list)
