@@ -47,3 +47,15 @@ class Base:
         inst = cls(1, 1)
         inst.update(**dictionary)
         return(inst)
+
+    @classmethod
+    def load_from_file(cls):
+        """ loads objs json file"""
+        filename = str(cls.__name__) + ".json"
+        with open(filename, 'r+', encoding='utf-8') as json_file:
+            obj_list = []
+            dict_list = Base.from_json_string(json_file.read())
+            for i in range(len(dict_list)):
+                new = cls.create(**dict_list[i])
+                obj_list.append(new)
+            return(obj_list)
