@@ -2,7 +2,7 @@
 """Start link class to table in database """
 from sys import argv
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import State, Base
 from model_city import City
 from sqlalchemy import (create_engine)
 
@@ -13,6 +13,8 @@ if __name__ == "__main__":
             argv[3]
         ),
         pool_pre_ping=True)
+    Base.metadata.create_all(engine)
+
     Session = sessionmaker(bind=engine)
     session = Session()
     for city in session.query(City).join(State).order_by(City.id).all():
