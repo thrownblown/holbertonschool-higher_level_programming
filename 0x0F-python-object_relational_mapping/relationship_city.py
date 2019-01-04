@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """makin states alchemiclly"""
 from sqlalchemy import Column, ForeignKey, Integer, String
-from model_state import Base
+from relationship_state import Base, State
 from sqlalchemy.orm import relationship
 
 
