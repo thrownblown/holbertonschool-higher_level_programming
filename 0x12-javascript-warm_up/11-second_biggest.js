@@ -11,5 +11,4 @@ if (process.argv.length <= 3) {
   arr = arr.map(Number);
   arr.sort(sortNumber);
   console.log(arr[arr.length - 2]);
-  console.log(arr);
 }
