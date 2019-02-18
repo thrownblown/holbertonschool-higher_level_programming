@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 class Rectangle {
   // non empty rectangle class
   constructor (w, h) {
