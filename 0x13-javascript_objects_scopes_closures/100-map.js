@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// let list = require('./100-data.js');
+let list = require('./100-data.js');
 
 console.log(list);
 
