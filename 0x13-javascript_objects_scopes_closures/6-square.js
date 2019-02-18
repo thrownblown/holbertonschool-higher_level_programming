@@ -35,13 +35,13 @@ class Rectangle {
 
   charPrint (c) {
     // prints the rectangle using the character X
-    if (c === 0) {
-      c = '0';
+    if (c === undefined) {
+      c = 'X';
     }
     for (let row = 0; row < this.height; row++) {
       let x = '';
       for (let col = 0; col < this.width; col++) {
-        x += (c || 'X');
+        x += c;
       }
       console.log(x);
     }
