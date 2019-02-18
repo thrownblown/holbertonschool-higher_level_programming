@@ -31,12 +31,6 @@ class Rectangle {
     this.height = this.height * 2;
     this.width = this.width * 2;
   }
-}
-
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
   charPrint (c) {
     // prints the rectangle using the character X
     for (let row = 0; row < this.height; row++) {
@@ -46,6 +40,12 @@ class Square extends Rectangle {
       }
       console.log(x);
     }
+  }
+}
+
+class Square extends Rectangle {
+  constructor (size) {
+    super(size, size);
   }
 }
 
